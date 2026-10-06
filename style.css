@@ -1,0 +1,230 @@
+/* ==========================================
+   1. Box-Sizing Reset & Global Variables
+   ========================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary-color: #2563eb;
+  --primary-hover: #1d4ed8;
+  --bg-color: #f8fafc;
+  --card-bg: #ffffff;
+  --text-color: #1e293b;
+  --text-muted: #64748b;
+  --border-color: #e2e8f0;
+
+  /* Category Visual Styles */
+  --cat-personal: #0d9488; /* Teal */
+  --cat-work: #991b1b;     /* Dark Red */
+  --cat-study: #2563eb;    /* Blue */
+  --error-color: #dc2626;  /* Red */
+}
+
+/* ==========================================
+   2. Styles for Body, Header, Main, Footer
+   ========================================== */
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  text-align: center;
+  padding: 2.5rem 1rem;
+}
+
+header h1 {
+  font-size: 2.25rem;
+  margin-bottom: 0.25rem;
+}
+
+header p {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+main {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+  flex: 1;
+}
+
+footer {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  margin-top: auto;
+}
+
+/* White Section Cards */
+section {
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+/* ==========================================
+   3. Form Laid Out with Flexbox
+   ========================================== */
+#note-form {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-end;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.form-group.flex-grow {
+  flex: 1;
+}
+
+label {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+input[type="text"],
+select {
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 1rem;
+  outline: none;
+}
+
+input[type="text"]:focus,
+select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* ==========================================
+   4. Visible :hover Style on Buttons
+   ========================================== */
+button {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.6rem 1.25rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  white-space: nowrap;
+}
+
+button:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* Error Message Style */
+#error-message {
+  color: var(--error-color);
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-top: 0.5rem;
+  min-height: 1.25rem;
+}
+
+/* ==========================================
+   5. Note Cards (Padding, Border, Border-Radius, Margin)
+   ========================================== */
+.search-container {
+  margin-bottom: 1rem;
+}
+
+#search-input {
+  width: 100%;
+}
+
+#note-count {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+#notes-list {
+  list-style: none;
+}
+
+/* Note styled as card */
+.note-card,
+#notes-list li {
+  padding: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  margin-bottom: 0.75rem;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ==========================================
+   6. Different Visual Style for Each Category
+   ========================================== */
+.category-personal {
+  border-left: 6px solid var(--cat-personal) !important;
+  background-color: #f0fdfa;
+}
+
+.category-work {
+  border-left: 6px solid var(--cat-work) !important;
+  background-color: #fef2f2;
+}
+
+.category-study {
+  border-left: 6px solid var(--cat-study) !important;
+  background-color: #eff6ff;
+}
+
+/* ==========================================
+   7. @media (max-width: 600px) Layout Changes
+   ========================================== */
+@media (max-width: 600px) {
+  #note-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .form-group.flex-grow {
+    width: 100%;
+  }
+
+  button {
+    width: 100%;
+    padding: 0.75rem;
+  }
+}
