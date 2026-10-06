@@ -12,3 +12,16 @@ QuickNotes is a light, fast, and fully responsive note-taking web application de
 - **Responsive Flexbox Design**: Optimized user interface with white card containers and full responsiveness for mobile screens up to 600px wide.
 - **Safe DOM Rendering**: Built using standard `createElement` and `textContent` methods to eliminate cross-site scripting (XSS) risks.
 
+
+## How to Run Locally
+
+Because QuickNotes is built using pure HTML, CSS, and JavaScript, no complex installations, build tools, or server setups are required.
+
+1. **Clone or Download the Repository**:
+   Download the project files (`index.html`, `style.css`, and `script.js`) into a single directory on your machine.
+
+2. **Open directly in a Browser**:
+   Double-click the `index.html` file to open it in any modern web browser (Google Chrome, Mozilla Firefox, Apple Safari, Microsoft Edge).
+
+3. **(Optional) Run with Live Server**:
+   If using Visual Studio Code, right-click `index.html` and select **Open with Live Server** for live page reloading during development.
