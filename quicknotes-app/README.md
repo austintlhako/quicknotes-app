@@ -25,3 +25,11 @@ Because QuickNotes is built using pure HTML, CSS, and JavaScript, no complex ins
 
 3. **(Optional) Run with Live Server**:
    If using Visual Studio Code, right-click `index.html` and select **Open with Live Server** for live page reloading during development.
+
+  ## What i learned
+
+1. How to add a Clear all button that asks for confirmation before deleting every note
+
+2. I learned how to use document.querySelector() to select elements and document.createElement() with textContent to safely build HTML from user input without risking XSS vulnerabilities.
+
+3. How to prevent default form submission actions.
